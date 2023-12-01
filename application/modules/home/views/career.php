@@ -43,20 +43,55 @@
               </div>
               <div class="col-md-4">
                 <div class="applly-button">
-                  <button type="button" class="btn btn-primary btn-bule">Apply</button>
+                  <button type="button" class="btn btn-primary btn-bule" data-bs-toggle="modal" data-bs-target="#ApplyModal">Apply</button>
                 </div>
 
               </div>
             </div>
-
-
           </div>
-
         </div>
-
       </div>
 <?php } } ?>
 
+		
+<!-- The Modal -->
+<div class="modal applyModal" id="ApplyModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">SEO Executives - Apply Now</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+         <div class="mb-3">
+			 <input type="text" placeholder="Full name" class="form-control">
+		  </div>
+		  <div class="mb-3">
+			 <input type="text" placeholder="Email address" class="form-control">
+		  </div>
+		  <div class="mb-3">
+			 <input type="text" placeholder="Phone number" class="form-control">
+		  </div>
+		  <div class="mb-3">
+			 <input type="file" placeholder="Phone number" class="form-control">
+		  </div>
+		  <button type="submit" class="btn btn-submit">Submit</button>
+      </div>
+
+		
+		
+		
+       
+
+    </div>
+  </div>
+</div>		
+		
+		
      
     </div>
   </section>
