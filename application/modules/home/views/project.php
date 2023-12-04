@@ -1,6 +1,6 @@
   <?php $bg = base_url('uploads/projects').'/'.$results->bg_image;?>
   <!-- style="background-image: url('<?php echo $bg;?>');"  -->
-  <section class=" property-details" >
+  <section class="property-details" >
     
 	<div class="hero-slider slider">
 		<div>
