@@ -1,6 +1,10 @@
   <?php $bg = base_url('uploads/projects').'/'.$results->bg_image;?>
   <section class=" property-details p-5 text-white  d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $bg;?>');">
-    <div class="container">
+    
+  </section>
+
+<section class="rerawrap clearfix">
+	<div class="container">
       <div class="property-con">
         <div class="row">
          <div class="col-12 col-md-4">
@@ -43,7 +47,8 @@ $prStatus = $this->common_model->getsingle('project_status', array('id'=>$result
         </div>
       </div>
     </div>
-  </section>
+</section>
+
 
   <section class="overview">
     <div class="container">
