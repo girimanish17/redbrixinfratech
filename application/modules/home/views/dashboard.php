@@ -255,17 +255,42 @@
           <div class="our-partners">
             <div>
               <div class="op-logo">
-                <img src="<?php echo base_url()?>assets/asset2/images/pt1.png" alt="">
+                <img src="<?php echo base_url()?>assets/asset2/images/p1.png" alt="">
               </div>
             </div>
             <div>
               <div class="op-logo">
-                <img src="<?php echo base_url()?>assets/asset2/images/pt2.png" alt="">
+                <img src="<?php echo base_url()?>assets/asset2/images/p2.png" alt="">
               </div>
             </div>
             <div>
               <div class="op-logo">
-                <img src="<?php echo base_url()?>assets/asset2/images/pt3.png" alt="">
+                <img src="<?php echo base_url()?>assets/asset2/images/p3.png" alt="">
+              </div>
+            </div>
+			<div>
+              <div class="op-logo">
+                <img src="<?php echo base_url()?>assets/asset2/images/p4.png" alt="">
+              </div>
+            </div>
+			<div>
+              <div class="op-logo">
+                <img src="<?php echo base_url()?>assets/asset2/images/p5.png" alt="">
+              </div>
+            </div>
+			<div>
+              <div class="op-logo">
+                <img src="<?php echo base_url()?>assets/asset2/images/p6.png" alt="">
+              </div>
+            </div>
+			<div>
+              <div class="op-logo">
+                <img src="<?php echo base_url()?>assets/asset2/images/p7.png" alt="">
+              </div>
+            </div>
+			<div>
+              <div class="op-logo">
+                <img src="<?php echo base_url()?>assets/asset2/images/p8.png" alt="">
               </div>
             </div>
             

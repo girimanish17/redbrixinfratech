@@ -95,7 +95,7 @@ class Home extends CI_Controller {
 		$data['results'] = $results = $this->common_model->getAllwhere('blogs', array('slug'=>$slug));
 		$data['pblog'] = $pblog = $this->common_model->getAllwhere_pagination('blogs', '','3', array(), 'id', 'desc');
 		
-		$data['main_content'] = 'blog';
+		$data['main_content'] = 'blog_listing';
 		$this->load->view('includes/home_template',$data);
 	}
 	
