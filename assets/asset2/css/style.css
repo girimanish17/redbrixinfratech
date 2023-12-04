@@ -1590,14 +1590,19 @@ section.brosher-section {
   border-radius: 5px;
 }
 section.property-details {
-  height: 580px;
-  background-image: url("../images/pro-bg.jpg");
+  /*background-image: url("../images/pro-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center;*/
   position: relative;
-  margin-top: 50px;
+  margin-top: 100px;
+	overflow: hidden;
 }
+section.property-details .slick-slide{ padding: 0px;}
+section.property-details img{ width: 100%; height: auto;}
+section.property-details .slick-prev.slick-arrow{ left: 30px;}
+section.property-details .slick-next.slick-arrow{ right: 30px;}
+
 .lavel-1 {
     padding: 10px 15px;
     background-color: rgb(30 61 92);
