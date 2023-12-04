@@ -1,5 +1,5 @@
   <!-- ***** Header Area End ***** -->
-
+<!--
   <section class="main-banner">
     <div class="container">
       <div class="row">
@@ -74,7 +74,118 @@
 
 
   </section>
+  -->
   
+  <section class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="top-text header-text">
+
+            <h2>Find The Best APART <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+          </div>
+			
+        </div>
+        <div class="col-lg-12">
+          <form id="search-form" name="gs" method="submit" role="search" action="#">
+            <div class="row">
+
+
+              <div class="col-lg-9 align-self-center">
+                <fieldset class="position-relative">
+				  <select class="w-25 float-start">
+					  <option>Residential </option>
+					  <option>Commercial</option>
+					  <option>Resale</option>
+					  <option>Plot</option>
+				  </select>	
+                  <input type="address" name="address" class="searchText w-75 float-end"
+                    placeholder="Search by City, Location, Project, Developer" autocomplete="on" required>
+					<ul>
+						<li><a href="#">Residential </a></li>
+					    <li><a href="#">Commercial</a></li>
+					    <li><a href="#">Resale</a></li>
+					    <li><a href="#">Plot</a></li>
+					</ul>
+                </fieldset>
+              </div>
+
+              <div class="col-lg-3">
+                <fieldset>
+                  <button class="main-button"><i class="fa fa-search"></i> Search Now</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <div class="row justify-content-center mt-5 mt-md-3">
+        <div class="col-lg-8 text-center">
+          <a class="btn btn-primary btn-brown">Recidential</a>
+          <a class="btn btn-primary btn-brown ">Commercial</a>
+          <a class="btn btn-primary btn-brown">Resale</a>
+          <a class="btn btn-primary btn-brown">Plot</a>
+        </div>
+
+      </div>
+    
+	<div class="counter-box">
+      <div class="row justify-content-center">
+        <div class="col-md-2 col-4">
+          <div class="counter">
+            <h2><span class="count">72418</span></h2>
+            <p>Cr. Worth Properties Sold</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-4">
+          <div class="counter">
+            <h2><span class="count">150000</span></h2>
+            <p>+ Happy Customers</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-4">
+          <div class="counter">
+            <h2><span class="count">100</span></h2>
+            <p>+ Developer</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-4">
+          <div class="counter">
+            <h2><span class="count">700</span></h2>
+            <p>+ Projects</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-4">
+          <div class="counter">
+            <h2><span class="count">30</span></h2>
+            <p>+ Offices in India</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-4">
+          <div class="counter">
+            <h2><span class="count">3</span></h2>
+            <p>+ Offices World Wide</p>
+          </div>
+        </div>
+      </div>
+    </div>		
+</div>
+
+    <div class="hero-slider slider">
+		<div>
+			<img src="<?php echo base_url(); ?>images/main-banner.webp" class="img-fluid m-hide" alt=""/>
+			<img src="<?php echo base_url(); ?>images/main-banner-m.webp" class="img-fluid d-hide" alt=""/>
+		</div>
+		<div>
+			<img src="<?php echo base_url(); ?>images/main-banner.webp" class="img-fluid m-hide" alt=""/>
+			<img src="<?php echo base_url(); ?>images/main-banner-m.webp" class="img-fluid d-hide" alt=""/>
+		</div>
+	</div>
+
+
+	  
+  </section>
   <section class="projects-section">
     <div class="container">
       <div class="row">
@@ -584,5 +695,4 @@ $( document ).ready(function() {
     });
 });
 });
-
 </script>
