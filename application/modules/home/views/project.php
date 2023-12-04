@@ -1,6 +1,18 @@
   <?php $bg = base_url('uploads/projects').'/'.$results->bg_image;?>
-  <section class=" property-details p-5 text-white  d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $bg;?>');">
+  <!-- style="background-image: url('<?php echo $bg;?>');"  -->
+  <section class=" property-details" >
     
+	<div class="hero-slider slider">
+		<div>
+			<img src="<?php echo base_url(); ?>images/main-banner.webp" class="img-fluid m-hide" alt=""/>
+			<img src="<?php echo base_url(); ?>images/main-banner-m.webp" class="img-fluid d-hide" alt=""/>
+		</div>
+		<div>
+			<img src="<?php echo base_url(); ?>images/main-banner.webp" class="img-fluid m-hide" alt=""/>
+			<img src="<?php echo base_url(); ?>images/main-banner-m.webp" class="img-fluid d-hide" alt=""/>
+		</div>
+	</div>
+	
   </section>
 
 <section class="rerawrap clearfix">
@@ -47,6 +59,9 @@ $prStatus = $this->common_model->getsingle('project_status', array('id'=>$result
         </div>
       </div>
     </div>
+	
+	
+
 </section>
 
 

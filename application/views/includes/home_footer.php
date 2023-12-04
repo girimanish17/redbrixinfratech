@@ -96,6 +96,15 @@
 
 
   <script>
+   $('.hero-slider').slick({
+      infinite: true,
+      slidesToShow: 1,
+	  arrows: true,
+	  //fade: true,
+      slidesToScroll: 1,
+      autoplay: false,
+      autoplaySpeed: 1000,
+    });
     $('.featured-projects').slick({
       infinite: true,
       slidesToShow: 4,
