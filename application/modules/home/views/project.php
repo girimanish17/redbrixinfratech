@@ -289,7 +289,7 @@ $kh1 = $this->db->query("SELECT * FROM `project_highlights` where project_id=$id
            
 			
 			<div class="main-title clearfix">
-				<h2>Realated Properties</h2>
+				<h2>Related Properties</h2>
 				<p>Invest in our Most Recognized Commercial Properties and multiply your investment like never before.</p>
 				
 			</div>
