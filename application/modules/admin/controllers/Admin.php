@@ -31,6 +31,146 @@ class Admin extends CI_Controller {
 		}
             
 	}
+	
+	public function project_sliders()
+	{
+		if($this->session->userdata('id') !='')
+		{	
+			$data['msg'] = $this->session->flashdata('msg');
+			$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array());
+			$data['main_content'] = 'project_sliders';
+			$this->load->view('includes/admin_template',$data);
+		}
+		else
+		{
+			redirect('login');
+		}
+            
+	}
+	
+	public function home_sliders()
+	{
+		if($this->session->userdata('id') !='')
+		{	
+			$data['msg'] = $this->session->flashdata('msg');
+			$data['home_sliders'] = $this->common_model->getAllwhere('home_sliders', array());
+			$data['main_content'] = 'home_sliders';
+			$this->load->view('includes/admin_template',$data);
+		}
+		else
+		{
+			redirect('login');
+		}
+            
+	}
+	
+	public function delete_slider($id)
+	{
+		if($this->session->userdata('id') =='')
+		{
+			redirect('login');
+		}
+
+		$this->common_model->deleteData('home_sliders', array('id' => $id));
+		$this->session->set_flashdata('msg', 'Slider Image deleted successfully.');
+		redirect('admin/home_sliders');
+	}
+	
+	public function delete_p_slider($id)
+	{
+		if($this->session->userdata('id') =='')
+		{
+			redirect('login');
+		}
+
+		$this->common_model->deleteData('project_sliders', array('id' => $id));
+		$this->session->set_flashdata('msg', 'Slider Image deleted successfully.');
+		redirect('admin/project_sliders');
+	}
+	
+	public function add_slider()
+	{
+		if($this->session->userdata('id') =='')
+		{
+			redirect('login');
+		}
+
+		$file_path =  'uploads/sliders';
+		$config['upload_path']          =$file_path;
+   		$config['allowed_types']        = '*';
+   		$this->load->library('upload', $config);
+		
+		$this->form_validation->set_rules('title', 'Title', 'trim');
+		
+		if($this->form_validation->run())
+		{
+			if($this->upload->do_upload('image'))
+			{
+				$image = $this->upload->data('file_name');
+				//$insert['title'] = $this->input->post('title');
+				$insert['image'] = $image;			
+				$res = $this->common_model->insertData('home_sliders', $insert);
+				if($res){
+					$this->session->set_flashdata('msg', 'Slider Image added successfully.');
+				} else {
+					$this->session->set_flashdata('msgError', 'Slider Image failed to add.');
+				}
+
+			}else{
+				$this->session->set_flashdata('msgError',$this->upload->display_errors());
+			}
+
+			
+			
+			redirect('admin/home_sliders');
+		}
+
+		$data['main_content'] = 'add_slider';
+		$this->load->view('includes/admin_template',$data);
+	}
+
+	public function add_p_slider()
+	{
+		if($this->session->userdata('id') =='')
+		{
+			redirect('login');
+		}
+
+		$file_path =  'uploads/projects';
+		$config['upload_path']          =$file_path;
+   		$config['allowed_types']        = '*';
+   		$this->load->library('upload', $config);
+		
+		$this->form_validation->set_rules('project_id', 'Project', 'trim|required');
+		
+		if($this->form_validation->run())
+		{
+			if($this->upload->do_upload('image'))
+			{
+				$image = $this->upload->data('file_name');
+				$insert['project_id'] = $this->input->post('project_id');
+				$insert['image'] = $image;			
+				$res = $this->common_model->insertData('project_sliders', $insert);
+				if($res){
+					$this->session->set_flashdata('msg', 'Slider Image added successfully.');
+				} else {
+					$this->session->set_flashdata('msgError', 'Slider Image failed to add.');
+				}
+
+			}else{
+				$this->session->set_flashdata('msgError',$this->upload->display_errors());
+			}
+
+			
+			
+			redirect('admin/project_sliders');
+		}
+		
+		$data['projects'] = $this->common_model->getAllwhere('projects', array());
+		
+		$data['main_content'] = 'add_p_slider';
+		$this->load->view('includes/admin_template',$data);
+	}
 
 	public function add_blog()
 	{

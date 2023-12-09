@@ -56,11 +56,14 @@
                                     <ul class="nav child_menu" style="display: none">                    
                                     <li><a href="<?php echo base_url('admin/add_blog'); ?>">Add Blog</a></li>                    
                                     <li><a href="<?php echo base_url('admin/blog_list'); ?>">View List</a></li>                                     
-                                 </ul>                </li>				
+                                 </ul>                
+								 </li>	
+								<li><a href="<?php echo base_url('admin/home_sliders'); ?>"><i class="fa fa-list"></i> Home Slider </a></li> 								 
                                     <li><a><i class="fa fa-qrcode"></i> Projects <span class="fa fa-chevron-down"></span></a>                  
                                     <ul class="nav child_menu" style="display: none">                    
                                     <li><a href="<?php echo base_url('admin/add_project'); ?>">Add Project</a></li>                    
-                                    <li><a href="<?php echo base_url('admin/project_list'); ?>">View List</a></li>                                     
+                                    <li><a href="<?php echo base_url('admin/project_list'); ?>">View List</a></li>  
+									<li><a href="<?php echo base_url('admin/project_sliders'); ?>">Project Sliders</a></li>									
                                  </ul>                </li>		
 								<li><a><i class="fa fa-qrcode"></i> Job Openings <span class="fa fa-chevron-down"></span></a>                  
                                     <ul class="nav child_menu" style="display: none">                    
