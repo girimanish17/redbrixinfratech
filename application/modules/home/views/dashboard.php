@@ -82,30 +82,26 @@
         <div class="col-lg-12">
           <div class="top-text header-text">
 
-            <h2>Find The Best APART <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+            <h2>Discover the Perfect Range of <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
           </div>
 			
         </div>
         <div class="col-lg-12">
-          <form id="search-form" name="gs" method="submit" role="search" action="#">
+          <form id="search-form" name="gs" method="submit" role="search" action="<?php echo base_url('project_listing'); ?>">
             <div class="row">
 
 
               <div class="col-lg-9 align-self-center">
                 <fieldset class="position-relative">
-				  <select class="w-25 float-start">
-					  <option>Residential </option>
-					  <option>Commercial</option>
-					  <option>Resale</option>
-					  <option>Plot</option>
+				  <select class="w-25 float-start" name="category_id">
+					  <option value="1">Residential </option>
+					  <option value="2" >Commercial</option>
+					  <option value="4" >Resale</option>
+					  <option value="3" >Plot</option>
 				  </select>	
-                  <input type="address" name="address" class="searchText w-75 float-end"
-                    placeholder="Search by City, Location, Project, Developer" autocomplete="on" required>
-					<ul>
-						<li><a href="#">Residential </a></li>
-					    <li><a href="#">Commercial</a></li>
-					    <li><a href="#">Resale</a></li>
-					    <li><a href="#">Plot</a></li>
+                  <input type="address" name="location" autocomplete="off" class="searchText w-75 float-end"
+                    placeholder="Search by City, Location, Project, Developer" autocomplete="on" required onkeyup="autosearch(this.value);">
+					<ul id="autosearch">						
 					</ul>
                 </fieldset>
               </div>
@@ -120,7 +116,7 @@
         </div>
 
       </div>
-      <div class="row justify-content-center mt-5 mt-md-3">
+     <!-- <div class="row justify-content-center mt-5 mt-md-3">
         <div class="col-lg-8 text-center">
           <a class="btn btn-primary btn-brown">Recidential</a>
           <a class="btn btn-primary btn-brown ">Commercial</a>
@@ -128,59 +124,49 @@
           <a class="btn btn-primary btn-brown">Plot</a>
         </div>
 
-      </div>
+      </div> -->
     
 	<div class="counter-box">
       <div class="row justify-content-center">
-        <div class="col-md-2 col-4">
+        <div class="col-md-3">
           <div class="counter">
-            <h2><span class="count">72418</span></h2>
-            <p>Cr. Worth Properties Sold</p>
+            <h2><span class="count" data-value="11">11</span></h2>
+            <p>Years of Excellence</p>
           </div>
         </div>
-        <div class="col-md-2 col-4">
+		<div class="col-md-3">
           <div class="counter">
-            <h2><span class="count">150000</span></h2>
+            <h2><span class="count"data-value="150">150</span></h2>
+            <p>+ Property experts</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="counter">
+            <h2><span class="count" data-value="100">100</span></h2>
+            <p>+ Leading Developers</p>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="counter">
+            <h2><span class="count" data-value="10000">10000</span></h2>
             <p>+ Happy Customers</p>
           </div>
         </div>
-        <div class="col-md-2 col-4">
-          <div class="counter">
-            <h2><span class="count">100</span></h2>
-            <p>+ Developer</p>
-          </div>
-        </div>
-        <div class="col-md-2 col-4">
-          <div class="counter">
-            <h2><span class="count">700</span></h2>
-            <p>+ Projects</p>
-          </div>
-        </div>
-        <div class="col-md-2 col-4">
-          <div class="counter">
-            <h2><span class="count">30</span></h2>
-            <p>+ Offices in India</p>
-          </div>
-        </div>
-        <div class="col-md-2 col-4">
-          <div class="counter">
-            <h2><span class="count">3</span></h2>
-            <p>+ Offices World Wide</p>
-          </div>
-        </div>
+        
       </div>
-    </div>		
+    </div>
 </div>
 
     <div class="hero-slider slider">
+		<?php if($home_sliders){ ?>
+		<?php foreach($home_sliders as $slid){ ?>
 		<div>
-			<img src="<?php echo base_url(); ?>images/main-banner.webp" class="img-fluid m-hide" alt=""/>
-			<img src="<?php echo base_url(); ?>images/main-banner-m.webp" class="img-fluid d-hide" alt=""/>
+			<img src="<?php echo base_url(); ?>uploads/sliders/<?php echo $slid->image ?>" class="img-fluid m-hide" alt=""/>
 		</div>
-		<div>
-			<img src="<?php echo base_url(); ?>images/main-banner.webp" class="img-fluid m-hide" alt=""/>
-			<img src="<?php echo base_url(); ?>images/main-banner-m.webp" class="img-fluid d-hide" alt=""/>
-		</div>
+		
+		<?php } ?>
+		<?php } ?>
 	</div>
 
 
@@ -695,4 +681,29 @@ $( document ).ready(function() {
     });
 });
 });
+
+function autosearch(val)
+{
+	if(val=="")
+	{
+		$("#autosearch").hide();
+	}else{
+		$("#autosearch").show();
+		
+		$.ajax({
+			url : "<?php echo base_url('home/autosearch'); ?>",
+			type : "POST",
+			data : {"search" : val},
+			success : function(data) {
+				$("#autosearch").html(data);
+			},
+			error : function(data) {
+				//console.log(data);
+			}
+		});
+		
+		
+	}
+	
+}
 </script>

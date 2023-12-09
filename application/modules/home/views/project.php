@@ -3,14 +3,19 @@
   <section class="property-details" >
     
 	<div class="hero-slider slider">
+		<?php if($project_sliders){ ?>
+		<?php foreach($project_sliders as $slid){ ?>
 		<div>
-			<img src="<?php echo base_url(); ?>images/main-banner.webp" class="img-fluid m-hide" alt=""/>
-			<img src="<?php echo base_url(); ?>images/main-banner-m.webp" class="img-fluid d-hide" alt=""/>
+			<img src="<?php echo base_url(); ?>uploads/projects/<?php echo $slid->image ?>" class="img-fluid m-hide" alt=""/>
 		</div>
-		<div>
+		
+		<?php } ?>
+		<?php }else{ ?>
+		<!--<div>
 			<img src="<?php echo base_url(); ?>images/main-banner.webp" class="img-fluid m-hide" alt=""/>
-			<img src="<?php echo base_url(); ?>images/main-banner-m.webp" class="img-fluid d-hide" alt=""/>
-		</div>
+		</div> -->
+		<?php } ?>
+		
 	</div>
 	
   </section>
@@ -320,7 +325,7 @@ $kh1 = $this->db->query("SELECT * FROM `project_highlights` where project_id=$id
 						<span class="location"><i class="ti-pin-alt"></i> <?php echo $val->address?></span>
 						<a href="<?php echo base_url('home/project').'/'.$val->slug?>"><img src="<?php echo base_url('uploads/projects').'/'.$val->project_image?>" class="img-fluid" alt=""/></a>
 						<?php $project_status = $this->common_model->getsingle('project_status', array('id'=>$val->project_status));?>
-						<a href="#" class="thmb_cntnt"><?=$project_status->project_status?></a>
+						<!--<a href="#" class="thmb_cntnt"><?=$project_status->project_status?></a> -->
 					</div>
 				  <div class="details clearfix">
 					    <div class="tc_content clearfix">
@@ -331,6 +336,7 @@ $kh1 = $this->db->query("SELECT * FROM `project_highlights` where project_id=$id
 								<li class="list-inline-item notlong"> <?=$val->rera_no?></li>
 								<li class="list-inline-item notlong"> <?=$val->payment_plan?></li>
 								<li class="list-inline-item notlong"> <?=$val->price?></li>
+								<li class="list-inline-item notlong"> <?=$project_status->project_status?></li>
 							</ul>
 						</div>
 					<div class="fp_footer">							

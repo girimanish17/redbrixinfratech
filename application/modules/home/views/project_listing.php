@@ -71,46 +71,7 @@
 	</div>
 
        <div class="row">
-	   <?php// if($featured_listing) { foreach($featured_listing as $val) { 
-            //$pro_status = $this->common_model->getsingle('project_status', array('id' => $fea_project->project_status));
-        ?>	
-              <!--<div class="col-md-4">
-                <div class="product-item">
-
-                  <div class="product-img">
-                    <a href="<?php echo base_url(); ?>home/project/<?php echo $fea_project->slug; ?>" tabindex="-1"><img src="<?php echo base_url(); ?>uploads/projects/<?php echo $fea_project->project_image; ?>" alt="#"></a>
-                    <div class="product-badge">
-                      <ul>
-                        <li class="sale-badge bg-green">Get Callback</li>
-                      </ul>
-                    </div>
-                    <div class="product-img-location-gallery">
-                      <div class="product-img-location">
-                        <ul>
-                          <li>
-                            <a href="#" tabindex="-1"><i class="fa-solid fa-location-dot"></i> &nbsp; <?php echo $fea_project->address; ?></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-info">
-
-                    <h2 class="product-title"><a href="<?php echo base_url(); ?>home/project/<?php echo $fea_project->slug; ?>" tabindex="-1"><?php echo substr ($fea_project->project_title, 0, 200); ?></a></h2>
-							
-                    <ul class="prop_details">
-                     
-					    <li class="list-inline-item notlong">&#x2022; <?=$fea_project->project_type?></li>
-						<li class="list-inline-item notlong">&#x2022; <?=$fea_project->rera_no?></li>
-						<li class="list-inline-item notlong">&#x2022; <?=$fea_project->payment_plan?></li>
-						<li class="list-inline-item notlong">&#x2022; <?=$fea_project->price?></li>
-                    </ul>
-                  </div>
-
-
-
-                </div>
-	   </div>-->
+	 
 	    <div class="col-12">
           <div class="featured-projects">
             
@@ -120,7 +81,7 @@
 					<div class="thumb">
 						<span class="location"><i class="ti-pin-alt"></i> <?php echo $val->address?></span>
 						<a href="<?php echo base_url('home/project').'/'.$val->slug?>"><img src="<?php echo base_url('uploads/projects').'/'.$val->project_image?>" class="img-fluid" alt=""/></a>
-						<?php $project_status = $this->common_model->getsingle('project_status', array('id'=>$val->project_status));?>
+						<?php //$project_status = $this->common_model->getsingle('project_status', array('id'=>$val->project_status));  ?>
 						<!--<a href="#" class="thmb_cntnt"><?=$project_status->project_status?></a> -->
 					</div>
 				  <div class="details clearfix">

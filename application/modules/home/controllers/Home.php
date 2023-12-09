@@ -22,11 +22,31 @@ class Home extends CI_Controller {
 		$data['featured_project'] = $results = $this->common_model->getAllwhere('projects', array('featured_listing'=>1));
 		
 		$data['populars'] = $this->common_model->getAllwhere('projects', array('popular'=>1));
+		$data['home_sliders'] = $this->common_model->getAllwhere('home_sliders', array());
 		
 		$data['categories'] = $this->common_model->getallwhere('categories', array());
 		$data['blogs'] = $this->common_model->getallwhere('blogs', array());
 		$data['main_content'] = 'dashboard';
 		$this->load->view('includes/home_template',$data);
+	}
+	
+	public function autosearch()
+	{
+		$search = $this->input->post('search');
+		$data = $this->common_model->getAllwhere2(array(), '', $search, '','5');
+		
+		$html ='';
+		if($data)
+		{
+			foreach($data as $val)
+			{
+				$html .='<li><a href="'.base_url('project').'/'.$val->slug.'"> '.$val->project_title.'</a></li>';
+			}
+		}else{
+		$html .='<li><a href="#"> No Record Found</a></li>';	
+		}
+		
+		echo $html;
 	}
 
 	public function about()
@@ -73,6 +93,8 @@ class Home extends CI_Controller {
 		$data['project_highlights'] = $results = $this->common_model->getAllwhere('project_highlights', array('project_id'=>$id));
 		$data['project_amenties'] = $results = $this->common_model->getAllwhere('project_amenties', array('project_id'=>$id));
 		$data['project_retail'] = $results = $this->common_model->getAllwhere('project_retail', array('project_id'=>$id));
+		
+		$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array('project_id'=>$id));
 		
 		$data['main_content'] = 'project';
 		$this->load->view('includes/home_template',$data);

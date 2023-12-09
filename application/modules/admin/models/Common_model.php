@@ -444,7 +444,7 @@ class Common_model extends CI_Model
 		return $query->result(); 
     }
 	
-	public function getAllwhere2($where,$project_status='',$location='',$category_id='') 
+	public function getAllwhere2($where,$project_status='',$location='',$category_id='',$limit='') 
 	{		
 		//echo "hi"; die;
 		$this->db->select('*'); 
@@ -462,6 +462,9 @@ class Common_model extends CI_Model
 
 		if($category_id!='') {
 			$this->db->where('category',$category_id);
+		}
+		if($limit!='') {
+			$this->db->limit($limit);
 		}
 		
 		$query = $this->db->get();
