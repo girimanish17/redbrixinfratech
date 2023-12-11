@@ -93,13 +93,13 @@
 
               <div class="col-lg-9 align-self-center">
                 <fieldset class="position-relative">
-				  <select class="w-25 float-start" name="category_id">
+				  <select class="w-25 float-start" name="category_id" id="category_id">
 					  <option value="1">Residential </option>
 					  <option value="2" >Commercial</option>
 					  <option value="4" >Resale</option>
 					  <option value="3" >Plot</option>
 				  </select>	
-                  <input type="address" name="location" autocomplete="off" class="searchText w-75 float-end"
+                  <input type="address" id="location" name="location" autocomplete="off" class="searchText w-75 float-end"
                     placeholder="Search by City, Location, Project, Developer" autocomplete="on" required onkeyup="autosearch(this.value);">
 					<ul id="autosearch">						
 					</ul>
@@ -684,6 +684,7 @@ $( document ).ready(function() {
 
 function autosearch(val)
 {
+	var category_id = $("#category_id").val();
 	if(val=="")
 	{
 		$("#autosearch").hide();
@@ -693,7 +694,7 @@ function autosearch(val)
 		$.ajax({
 			url : "<?php echo base_url('home/autosearch'); ?>",
 			type : "POST",
-			data : {"search" : val},
+			data : {"search" : val , "category_id" :category_id},
 			success : function(data) {
 				$("#autosearch").html(data);
 			},
@@ -704,6 +705,12 @@ function autosearch(val)
 		
 		
 	}
+	
+}
+function autofit(value)
+{
+	$("#autosearch").hide();
+	$("#location").val(value);
 	
 }
 </script>

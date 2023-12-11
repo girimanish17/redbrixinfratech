@@ -25,7 +25,7 @@ class Home extends CI_Controller {
 		$data['home_sliders'] = $this->common_model->getAllwhere('home_sliders', array());
 		
 		$data['categories'] = $this->common_model->getallwhere('categories', array());
-		$data['blogs'] = $this->common_model->getallwhere('blogs', array());
+		$data['blogs'] = $this->common_model->getAllwherelimit('blogs', array(),'3','id','desc');
 		$data['main_content'] = 'dashboard';
 		$this->load->view('includes/home_template',$data);
 	}
@@ -33,14 +33,15 @@ class Home extends CI_Controller {
 	public function autosearch()
 	{
 		$search = $this->input->post('search');
-		$data = $this->common_model->getAllwhere2(array(), '', $search, '','5');
+		$category_id = $this->input->post('category_id');
+		$data = $this->common_model->getAllwhere2(array(), '', $search, $category_id ,'5');
 		
 		$html ='';
 		if($data)
 		{
 			foreach($data as $val)
 			{
-				$html .='<li><a href="'.base_url('project').'/'.$val->slug.'"> '.$val->project_title.'</a></li>';
+				$html .='<li><a id="'.$val->project_title.'" onclick="autofit(this.id)" > '.$val->project_title.'</a></li>';
 			}
 		}else{
 		$html .='<li><a href="#"> No Record Found</a></li>';	
