@@ -128,26 +128,26 @@
     
 	<div class="counter-box">
       <div class="row justify-content-center">
-        <div class="col-md-3">
+        <div class="col-md-3 col-6">
           <div class="counter">
             <h2><span class="count" data-value="11">11</span></h2>
             <p>Years of Excellence</p>
           </div>
         </div>
-		<div class="col-md-3">
+		<div class="col-md-3 col-6">
           <div class="counter">
             <h2><span class="count"data-value="150">150</span></h2>
             <p>+ Property experts</p>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-6">
           <div class="counter">
             <h2><span class="count" data-value="100">100</span></h2>
             <p>+ Leading Developers</p>
           </div>
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-3 col-6">
           <div class="counter">
             <h2><span class="count" data-value="10000">10000</span></h2>
             <p>+ Happy Customers</p>
