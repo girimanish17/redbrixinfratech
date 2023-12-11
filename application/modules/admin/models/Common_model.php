@@ -65,6 +65,27 @@ class Common_model extends CI_Model
             return $data;
         }
     }
+	
+	 function getAllwherelimit($table, $where,$limit='',$order_by='',$type='')
+    {
+        $this->db->select('*');
+		if($limit!='') {
+			$this->db->limit($limit);
+		}
+		if($order_by!='') {
+			$this->db->order_by($order_by,$type);
+		}
+		
+        $q = $this->db->get_where($table, $where);
+        $num_rows = $q->num_rows();
+        if ($num_rows > 0) {
+            foreach ($q->result() as $rows) {
+                $data[] = $rows;
+            }
+            $q->free_result();
+            return $data;
+        }
+    }
 	function getAllrecord_vehicles()
     {
         $this->db->select('v.*,c.client_name,c.mobile_no');				
