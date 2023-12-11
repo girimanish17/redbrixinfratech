@@ -189,31 +189,33 @@
 	  <?php $commercialcategory = $rec = $this->common_model->getsingle('categories', array('id'=>2));?>
 	  <?php $plotscategory = $rec = $this->common_model->getsingle('categories', array('id'=>3));?>
         <div class="col-md-4 shadowcard position-relative">
-          <div class="project-card">
+          <div class="project-card"> <a href="<?php echo base_url(); ?>project_listing?location=&category_id=1&project_status_id=">.</a>
             <img src="<?php echo base_url()?>uploads/projects/<?=$Residentialcategory->main_image?>" alt="">
             <div class="location-content-wrap">
               <div class="location-content">
-                <h5><a href="<?php echo base_url(); ?>project_listing?location=&category_id=1&project_status_id=">Residential</a></h5>
+                <h5>Residential</h5>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-4 shadowcard position-relative">
           <div class="project-card">
+			  <a href="<?php echo base_url(); ?>project_listing?location=&category_id=2&project_status_id="></a>
             <img src="<?php echo base_url()?>uploads/projects/<?=$commercialcategory->main_image?>" alt="">
             <div class="location-content-wrap">
               <div class="location-content">
-                <h5><a href="<?php echo base_url(); ?>project_listing?location=&category_id=2&project_status_id=">Commercial</a></h5>
+                <h5>Commercial</h5>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-4 shadowcard position-relative">
           <div class="project-card">
+			  <a href="<?php echo base_url(); ?>project_listing?location=&category_id=3&project_status_id="></a>
             <img src="<?php echo base_url()?>uploads/projects/<?=$plotscategory->main_image?>" alt="">
             <div class="location-content-wrap">
               <div class="location-content">
-                <h5><a href="<?php echo base_url(); ?>project_listing?location=&category_id=3&project_status_id=">Plots</a></h5>
+                <h5>Plots</h5>
               </div>
             </div>
           </div>

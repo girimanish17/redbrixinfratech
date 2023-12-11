@@ -99,7 +99,8 @@
    $('.hero-slider').slick({
       infinite: true,
       slidesToShow: 1,
-	  arrows: true,
+	  arrows: false,
+	  dots: true,
 	  //fade: true,
       slidesToScroll: 1,
       autoplay: false,
@@ -142,6 +143,7 @@
     $('.our-partners').slick({
       slidesToShow: 5,
       slidesToScroll: 1,
+	  arrows: false,
       autoplay: true,
       autoplaySpeed: 1500,
       responsive: [
