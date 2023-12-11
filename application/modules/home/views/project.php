@@ -152,7 +152,7 @@ $prStatus = $this->common_model->getsingle('project_status', array('id'=>$result
       <div class="row align-items-center">
         <div class="col-md-4">
           <div class="hl-point">
-<ul>
+<ul class="clearfix">
 <?php 
 $no = 1;
 $kh1 = $this->db->query("SELECT * FROM `project_highlights` where project_id=$id limit 4")->result();?>
@@ -165,7 +165,7 @@ $kh1 = $this->db->query("SELECT * FROM `project_highlights` where project_id=$id
         </div>
         <div class="col-md-4">
           <div class="highlight_middle">
-            <div class="highlight_text">Highlights</div>
+<!--            <div class="highlight_text">Highlights</div>-->
             <img src="<?php echo base_url('uploads/projects').'/'.$results->highlight_bg_image;?>">
 
           </div>
@@ -173,7 +173,7 @@ $kh1 = $this->db->query("SELECT * FROM `project_highlights` where project_id=$id
         <div class="col-md-4">
 
           <div class="hl-point_left">
-            <ul>
+            <ul class="clearfix">
 			<?php $kh2 = $this->db->query("SELECT * FROM `project_highlights` where project_id=$id limit 4 offset 4")->result();?>
 <?php  if($kh2){foreach($kh2 as $j=> $v2){?>
                         <li> <span class="chat-digit_left position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
