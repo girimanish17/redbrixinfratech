@@ -93,14 +93,15 @@
 
               <div class="col-lg-9 align-self-center">
                 <fieldset class="position-relative">
-				  <select class="w-25 float-start" name="category_id" id="category_id">
+				  <select class="w-25 float-start" name="category_id" id="category_id" onchange="autosearch();">
+					  <option value="">All </option>
 					  <option value="1">Residential </option>
-					  <option value="2" >Commercial</option>
+					  <option selected value="2" >Commercial</option>
 					  <option value="4" >Resale</option>
 					  <option value="3" >Plot</option>
 				  </select>	
                   <input type="address" id="location" name="location" autocomplete="off" class="searchText w-75 float-end"
-                    placeholder="Search by City, Location, Project, Developer" autocomplete="on" required onkeyup="autosearch(this.value);">
+                    placeholder="Search by City, Location, Project, Developer" autocomplete="on" required onkeyup="autosearch();">
 					<ul id="autosearch">						
 					</ul>
                 </fieldset>
@@ -189,18 +190,21 @@
 	  <?php $commercialcategory = $rec = $this->common_model->getsingle('categories', array('id'=>2));?>
 	  <?php $plotscategory = $rec = $this->common_model->getsingle('categories', array('id'=>3));?>
         <div class="col-md-4 shadowcard position-relative">
-          <div class="project-card"> <a href="<?php echo base_url(); ?>project_listing?location=&category_id=1&project_status_id=">.</a>
-            <img src="<?php echo base_url()?>uploads/projects/<?=$Residentialcategory->main_image?>" alt="">
+		 <a href="<?php echo base_url(); ?>project_listing?location=&category_id=1&project_status_id=">
+		 <div class="project-card"> 			
+            <img src="<?php echo base_url()?>uploads/projects/<?=$Residentialcategory->main_image?>" alt="">			
             <div class="location-content-wrap">
               <div class="location-content">
                 <h5>Residential</h5>
               </div>
-            </div>
+            </div>			
           </div>
+		  </a>
         </div>
         <div class="col-md-4 shadowcard position-relative">
-          <div class="project-card">
-			  <a href="<?php echo base_url(); ?>project_listing?location=&category_id=2&project_status_id="></a>
+          <a href="<?php echo base_url(); ?>project_listing?location=&category_id=2&project_status_id=">
+		  <div class="project-card">
+			 
             <img src="<?php echo base_url()?>uploads/projects/<?=$commercialcategory->main_image?>" alt="">
             <div class="location-content-wrap">
               <div class="location-content">
@@ -208,10 +212,12 @@
               </div>
             </div>
           </div>
+		   </a>
         </div>
         <div class="col-md-4 shadowcard position-relative">
-          <div class="project-card">
-			  <a href="<?php echo base_url(); ?>project_listing?location=&category_id=3&project_status_id="></a>
+          <a href="<?php echo base_url(); ?>project_listing?location=&category_id=3&project_status_id=">
+		  <div class="project-card">
+			 
             <img src="<?php echo base_url()?>uploads/projects/<?=$plotscategory->main_image?>" alt="">
             <div class="location-content-wrap">
               <div class="location-content">
@@ -219,6 +225,7 @@
               </div>
             </div>
           </div>
+		   </a>
         </div>
       </div>
     </div>
@@ -684,8 +691,9 @@ $( document ).ready(function() {
 });
 });
 
-function autosearch(val)
+function autosearch()
 {
+	var val = $("#location").val();
 	var category_id = $("#category_id").val();
 	if(val=="")
 	{

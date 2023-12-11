@@ -65,24 +65,27 @@
         <h4 class="modal-title"><?php echo $val->title?> - Apply Now</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-
+  <form action="<?php echo base_url(); ?>home/thank_you" method="post">
       <!-- Modal body -->
       <div class="modal-body">
-         <div class="mb-3">
-			 <input type="text" placeholder="Full name" class="form-control">
-		  </div>
-		  <div class="mb-3">
-			 <input type="text" placeholder="Email address" class="form-control">
-		  </div>
-		  <div class="mb-3">
-			 <input type="text" placeholder="Phone number" class="form-control">
-		  </div>
-		  <div class="mb-3">
+         <div class="form-group">
+						<input type="text" name="full_name" class="form-control" placeholder="Full name* " required>
+					</div>
+					<div class="form-group">
+						<input type="text" name="city" class="form-control" placeholder="City*" required>
+					</div>
+					<div class="form-group">
+						<input type="email" name="email" class="form-control" placeholder="Email*" required>
+					</div>
+					<div class="form-group">
+						<input type="tel" name="contact" minlength="10" maxlength="10" class="form-control" placeholder="Phone*" required>
+					</div>
+		 <!-- <div class="mb-3">
 			 <input type="file" placeholder="Phone number" class="form-control">
-		  </div>
+		  </div> -->
 		  <button type="submit" class="btn btn-submit">Submit</button>
       </div>
-
+</form>
 
     </div>
   </div>

@@ -475,15 +475,15 @@ class Common_model extends CI_Model
 		if($project_status!='') {
 			$this->db->where('project_status',$project_status);
 		}
-
-		if($location!='') {
-			$this->db->like('address', $location);
-			$this->db->or_like('project_title', $location);
-		}
-
 		if($category_id!='') {
 			$this->db->where('category',$category_id);
 		}
+		if($location!='') {
+			$this->db->like('project_title', $location);
+			//$this->db->or_like('address', $location);
+		}
+
+		
 		if($limit!='') {
 			$this->db->limit($limit);
 		}
