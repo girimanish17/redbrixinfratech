@@ -2283,7 +2283,7 @@ section.tab-section {
 .main-banner .slick-slide{ padding: 0px;}
 .main-banner .container {
   max-width: 1280px;
-	position: relative;
+	position: absolute;
 	left: 0; 
 	right: 0;
 	margin: 0 auto;
@@ -2966,7 +2966,9 @@ form#search-form button {
 	display: none;
 }
 	
-	
+.main-banner .container {
+    position: relative;
+}	
 	
 	
 	
