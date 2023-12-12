@@ -163,11 +163,11 @@
 		<?php if($home_sliders){ ?>
 		<?php foreach($home_sliders as $slid){ ?>
 		<div>
-			<img src="<?php echo base_url(); ?>uploads/sliders/<?php echo $slid->image ?>" class="img-fluid m-hide" alt=""/>
-		</div>
+			<img src="<?php echo base_url(); ?>uploads/sliders/<?php echo $slid->image ?>" class="img-fluid" alt=""/>
+		</div>		
+		<?php } ?>
+		<?php } ?>
 		
-		<?php } ?>
-		<?php } ?>
 	</div>
 
 

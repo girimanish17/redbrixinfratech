@@ -39,13 +39,15 @@
                     <table id="" class="table table-striped	text-center" style="">
                       <thead>
                         <tr>
-                          <th class="text-center">Image</th>
+                          <th class="text-center">Slider For</th>
+						  <th class="text-center">Image</th>
                           <th class="text-center">Action</th>
                         </tr>
                       </thead>
                       <tbody>
 						<?php if($home_sliders) { foreach($home_sliders as $row) { ?>
 							<tr>
+							<td> <?php if($row->type=="d"){ echo "Desktop"; }else{ echo "Mobile"; } ?> </td>
 							<td width="15%;"><a href="<?php echo base_url()?>uploads/sliders/<?php echo $row->image ?>" target="blank"><img src="<?php echo base_url()?>uploads/sliders/<?php echo $row->image ?>" alt="blog" width="130px;"></a></td>
 							
 							<td><a href="<?php echo base_url(); ?>admin/delete_slider/<?php echo $row->id ?>" onclick="return confirm('Do you want to delete the Slider');" class="btn btn-danger">Delete</a>

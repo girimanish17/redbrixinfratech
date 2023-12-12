@@ -100,14 +100,14 @@ class Admin extends CI_Controller {
    		$config['allowed_types']        = '*';
    		$this->load->library('upload', $config);
 		
-		$this->form_validation->set_rules('title', 'Title', 'trim');
+		$this->form_validation->set_rules('type', 'Slider For', 'trim');
 		
 		if($this->form_validation->run())
 		{
 			if($this->upload->do_upload('image'))
 			{
 				$image = $this->upload->data('file_name');
-				//$insert['title'] = $this->input->post('title');
+				$insert['type'] = $this->input->post('type');
 				$insert['image'] = $image;			
 				$res = $this->common_model->insertData('home_sliders', $insert);
 				if($res){
@@ -142,6 +142,7 @@ class Admin extends CI_Controller {
    		$this->load->library('upload', $config);
 		
 		$this->form_validation->set_rules('project_id', 'Project', 'trim|required');
+		$this->form_validation->set_rules('type', 'Slider For', 'trim'); 
 		
 		if($this->form_validation->run())
 		{
@@ -149,6 +150,7 @@ class Admin extends CI_Controller {
 			{
 				$image = $this->upload->data('file_name');
 				$insert['project_id'] = $this->input->post('project_id');
+				$insert['type'] = $this->input->post('type');
 				$insert['image'] = $image;			
 				$res = $this->common_model->insertData('project_sliders', $insert);
 				if($res){

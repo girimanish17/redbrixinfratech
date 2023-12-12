@@ -16,11 +16,14 @@
 			  <form  class="form-horizontal form-label-left" method="post" autocomplete="off" action="<?php echo base_url('admin/add_slider'); ?>" enctype="multipart/form-data">
 
 			<div class="form-group">
-				  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Title <span class="required">*</span>
+				  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Slider For <span class="required">*</span>
 				  </label>
 				  <div class="col-md-6 col-sm-6 col-xs-12">
-					<input type="text" autocomplete="off" id="title" name="title" value="<?php echo set_value('title'); ?>" placeholder="Add Title" class="form-control col-md-7 col-xs-12 <?php if(form_error('title')){ echo "parsley-error"; } ?>">
-					<span style="color:red;"> <?php echo form_error('title'); ?></span>
+					<select id="type" name="type" class="form-control col-md-7 col-xs-12 <?php if(form_error('type')){ echo "parsley-error"; } ?>">
+					<option value="d" >Desktop </option>
+					<option value="m" >Mobile </option>
+					</select>
+					<span style="color:red;"> <?php echo form_error('type'); ?></span>
 				  </div>				  
 				</div>
 				<div class="form-group">
