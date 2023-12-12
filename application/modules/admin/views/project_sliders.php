@@ -39,6 +39,7 @@
                     <table id="" class="table table-striped	text-center" style="">
                       <thead>
                         <tr>
+						  <th class="text-center">Slider For</th>
 						   <th class="text-center">Project</th>
                           <th class="text-center">Image</th>
                           <th class="text-center">Action</th>
@@ -52,6 +53,7 @@
 							
 							
 							<tr>
+							<td> <?php if($row->type=="d"){ echo "Desktop"; }else{ echo "Mobile"; } ?> </td>
 							<td> <?php echo $project->project_title; ?> </td>
 							<td width="15%;"><a href="<?php echo base_url()?>uploads/projects/<?php echo $row->image ?>" target="blank"><img src="<?php echo base_url()?>uploads/projects/<?php echo $row->image ?>" alt="blog" width="130px;"></a></td>
 							

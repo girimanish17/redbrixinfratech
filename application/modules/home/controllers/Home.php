@@ -16,13 +16,25 @@ class Home extends CI_Controller {
 		
 	}
 	
+	public function isMobileDevice() { 
+		return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo 
+	|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i" 
+	, $_SERVER["HTTP_USER_AGENT"]); 
+	} 
+
 	public function index($page = '')
 	{
 		$data['msg'] = $this->session->flashdata('msg');
 		$data['featured_project'] = $results = $this->common_model->getAllwhere('projects', array('featured_listing'=>1));
 		
 		$data['populars'] = $this->common_model->getAllwhere('projects', array('popular'=>1));
-		$data['home_sliders'] = $this->common_model->getAllwhere('home_sliders', array());
+		if($this->isMobileDevice()){ 
+			$data['home_sliders'] = $this->common_model->getAllwhere('home_sliders', array('type'=>'m'));
+		} 
+		else { 
+			$data['home_sliders'] = $this->common_model->getAllwhere('home_sliders', array('type'=>'d'));
+		} 
+		
 		
 		$data['categories'] = $this->common_model->getallwhere('categories', array());
 		$data['blogs'] = $this->common_model->getAllwherelimit('blogs', array(),'3','id','desc');
@@ -95,7 +107,12 @@ class Home extends CI_Controller {
 		$data['project_amenties'] = $results = $this->common_model->getAllwhere('project_amenties', array('project_id'=>$id));
 		$data['project_retail'] = $results = $this->common_model->getAllwhere('project_retail', array('project_id'=>$id));
 		
-		$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array('project_id'=>$id));
+		if($this->isMobileDevice()){ 
+			$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array('type'=>'m'));
+		} 
+		else { 
+			$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array('type'=>'d'));
+		} 
 		
 		$data['main_content'] = 'project';
 		$this->load->view('includes/home_template',$data);

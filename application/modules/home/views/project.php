@@ -6,7 +6,7 @@
 		<?php if($project_sliders){ ?>
 		<?php foreach($project_sliders as $slid){ ?>
 		<div>
-			<img src="<?php echo base_url(); ?>uploads/projects/<?php echo $slid->image ?>" class="img-fluid m-hide" alt=""/>
+			<img src="<?php echo base_url(); ?>uploads/projects/<?php echo $slid->image ?>" class="img-fluid" alt=""/>
 		</div>
 		
 		<?php } ?>
