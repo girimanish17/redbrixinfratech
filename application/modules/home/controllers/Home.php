@@ -108,10 +108,10 @@ class Home extends CI_Controller {
 		$data['project_retail'] = $results = $this->common_model->getAllwhere('project_retail', array('project_id'=>$id));
 		
 		if($this->isMobileDevice()){ 
-			$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array('type'=>'m'));
+			$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array('type'=>'m','project_id'=>$id));
 		} 
 		else { 
-			$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array('type'=>'d'));
+			$data['project_sliders'] = $this->common_model->getAllwhere('project_sliders', array('type'=>'d','project_id'=>$id));
 		} 
 		
 		$data['main_content'] = 'project';
