@@ -2823,10 +2823,15 @@ form#search-form input {
     padding: 55px 15px 65px;
     border-radius: 5px;
   }
-  section.property-details {
-    height: 320px;
+section.property-details {
+    height: auto;
     margin-top: 95px;
-  }
+    padding: 0 !important;
+}
+section.property-details .slick-dotted.slick-slider {
+margin-bottom: 0;
+}
+	
   section.tab-section {
     padding: 25px 0 0;
   }
@@ -2926,7 +2931,7 @@ form#search-form select, form#search-form input {
     z-index: 9999;
 }	
 .main-banner {
-    padding: 130px 0 60px;
+    padding: 95px 0 0;
 }
 .main-banner .container {
     top: 20%;
@@ -3002,7 +3007,7 @@ form#search-form button {
 }
 	
 .main-banner .container {
-    position: relative;
+    position: absolute;
 }	
 	
 	
